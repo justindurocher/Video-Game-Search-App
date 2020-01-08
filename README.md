@@ -10,4 +10,4 @@ As a gamer/comic fanatic, I want to be able to search from all the videogames/co
 Two developers for html/css (front-end) and Two developers for javascript (back-end)
 
 Front end= Josh and Justin 
-Back end= Nate and 
+Back end= Nate and Aboudou
