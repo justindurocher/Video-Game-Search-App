@@ -1,0 +1,22 @@
+body {
+    background-image: url("https://wallpaperaccess.com/full/328890.jpg");
+    
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    text-align: center;
+    color: whitesmoke;
+}
+
+h3 {
+    text-align: center;
+    color: whitesmoke;
+}
+.ui.cards {
+    margin: 106px;
+}
