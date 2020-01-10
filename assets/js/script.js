@@ -1,11 +1,3 @@
-$.ajax({
-  url: 'https://api.rawg.io/api/games',
-  method: 'GET'
-}).then(function(response) {
-  console.log(response);
-});
-
-
 // get 3 random games
 for (let i = 0; i < 3; i++) {
   let num = Math.floor(Math.random() * 354144);
@@ -24,4 +16,3 @@ function queryRawg(gameID, index) {
     $(elID).attr('src', response.background_image);
   });
 }
-
