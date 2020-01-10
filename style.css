@@ -20,3 +20,9 @@ h3 {
 .ui.cards {
     margin: 106px;
 }
+
+#game-thumb-1,
+#game-thumb-2,
+#game-thumb-3 {
+  width: 100%;
+}
