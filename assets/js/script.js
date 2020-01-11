@@ -1,18 +1,50 @@
-// get 3 random games
-for (let i = 0; i < 3; i++) {
-  let num = Math.floor(Math.random() * 354144);
-  console.log(num);
-  queryRawg(num, i + 1);
-}
+// variable to hold the total number of games from RAWG
+let totalGames;
+// variable to increment if the random game query was successful
+let randomGameCount = 0;
+let gameImageDisplayIndex = 1;
 
-function queryRawg(gameID, index) {
+// query RAWG to get total number of games
+$.ajax({
+  url: 'https://api.rawg.io/api/games',
+  method: 'GET'
+}).then(function(response) {
+  totalGames = response.count;
+  console.log(totalGames);
+  threeRandomGames();
+})
+
+// get 3 random games
+function threeRandomGames() {
+  let randNum = Math.floor(Math.random() * totalGames);
+  // console.log(randNum);
+
   $.ajax({
-    url: 'https://api.rawg.io/api/games/' + gameID,
+    url: 'https://api.rawg.io/api/games/' + randNum,
     method: 'GET'
   }).then(function(response) {
-    console.log(response);
-    let elID = '#game-thumb-' + index;
-    console.log(elID);
-    $(elID).attr('src', response.background_image);
+    // console.log('then');
+    // console.log(response);
+    console.log(response.background_image === null);
+    if (response) {
+      randomGameCount++;
+      let elID = '#game-thumb-' + gameImageDisplayIndex;
+      if (response.background_image === null) {
+        // Display a placeholder image
+      } else {
+        $(elID).attr('src', response.background_image);
+      }
+      
+      gameImageDisplayIndex++;
+    }
+    if (randomGameCount < 3) {
+      threeRandomGames();
+    }
+  }).fail(function(response) {
+    // console.log('fail');
+    // console.log(response);
+    if (randomGameCount < 3) {
+      threeRandomGames();
+    }
   });
 }
