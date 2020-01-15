@@ -127,3 +127,7 @@ if (randomGameCount < 3) {
 //   }
 //   articleDisplayIndex++;
 // }})
+
+
+// search button (Searches for 5)
+
