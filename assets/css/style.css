@@ -2,7 +2,31 @@ body {
     background-image: url("https://wallpaperaccess.com/full/328890.jpg");
     
 }
-
+h1{
+    font-family: 'Fruktur', cursive;
+    font-size: 40px;
+}
+.sixteen{
+    text-align: center;
+}
+#gameButton{
+    background-color: red;
+    color: white;
+    margin-bottom: 10px;
+    width: 300px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: 'Fruktur', cursive;
+    letter-spacing: 2px;
+}
+#gameButton:hover{
+    background-color: black;
+    color: red;
+    border-color: white;
+}
 h1 {
     text-align: center;
     color: black;
