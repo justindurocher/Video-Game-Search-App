@@ -40,6 +40,7 @@ function threeRandomGames() {
     if (randomGameCount < 3) {
       threeRandomGames();
     }
+      
 
 ///////////////////////// Articles function/////////////
 let totalArticles;
