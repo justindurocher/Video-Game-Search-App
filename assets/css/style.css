@@ -87,3 +87,14 @@ h3 {
 #game-thumb-3 {
   width: 100%;
 }
+
+/*****************
+AB
+******************/
+
+.searchInput{
+    font-size: unset;
+}
+.searchIcon{
+    size: unset;
+}
