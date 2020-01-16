@@ -1,11 +1,48 @@
 body {
-    background-image: url("https://wallpaperaccess.com/full/328890.jpg");
+    background-image: url("https://wallpaperaccess.com/full/772418.jpg");
     
+}
+ 
+
+div.ui.segment {
+    background-color: gainsboro;
 }
 h1{
     font-family: 'Fruktur', cursive;
     font-size: 40px;
 }
+
+div.ui.segment {
+    background-image: url("https://t4.ftcdn.net/jpg/02/08/90/41/240_F_208904171_ZCPXQXNfHV3L7QzYGp7rkeFfma7gBfGb.jpg");
+    background-size: auto;
+}
+
+input {
+    width: 1156px;
+    padding: 7px;
+    margin-left: 135px;
+}
+ 
+div.ui.segment.searchData{
+    width: 1156px;
+    color: ghostwhite;
+    margin-left: 135px;
+}
+i.search.link.icon {
+    color: white;
+}
+input#text {
+    color: black;
+}
+
+p.card-text {
+    color: white;
+}
+
+h5.card-title {
+    color: whitesmoke;
+} 
+
 .sixteen{
     text-align: center;
 }
