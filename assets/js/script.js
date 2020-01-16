@@ -94,7 +94,7 @@ if (randomGameCount < 3) {
 });
 }
 //////////
-//Ab
+//AbNews API: 7489c782bcde4db08a083da4b92cd2ef
 ////////////
 
 
@@ -157,13 +157,23 @@ searchIcon.on("click", function(event)
           cardDeck.append(aCard);
           $(".searchData").append(cardDeck);
           //$(".searchData").append($("<br>"));
-          
+          //https://newsapi.org/v2/everything?q=mario&apiKey=7489c782bcde4db08a083da4b92cd2ef
+          ////News API start here
+          var searchArticle = "https://newsapi.org/v2/everything?q=" + response.results[i].name + "&apiKey=7489c782bcde4db08a083da4b92cd2ef";
+
+            $.ajax({
+              url: searchArticle,
+              method: 'GET'
+            }).then(function(response){
+              console.log(response);
+            });
           
         }
       }
 
       else
       console.log(response.id);
+
     });
   
 }
