@@ -2,16 +2,30 @@ body {
     background-image: url("https://wallpaperaccess.com/full/328890.jpg");
     
 }
+
+.header:hover{
+    background-color: black;
+    color: red;
+}
+
 h1{
     font-family: 'Fruktur', cursive;
-    font-size: 40px;
+    font-size: 50px;
+    letter-spacing: 2px;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: red;
 }
+
 .sixteen{
     text-align: center;
 }
+
 #gameButton{
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: red;
     margin-bottom: 10px;
     width: 300px;
     padding: 15px;
@@ -22,12 +36,14 @@ h1{
     font-family: 'Fruktur', cursive;
     letter-spacing: 2px;
 }
+
 #gameButton:hover{
     background-color: black;
     color: red;
     border-color: white;
 }
-h1 {
+
+.header {
     text-align: center;
     color: black;
 }
@@ -41,6 +57,7 @@ h3 {
     text-align: center;
     color: whitesmoke;
 }
+
 .ui.cards {
     margin: 106px;
 }
