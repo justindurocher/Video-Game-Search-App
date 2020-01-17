@@ -87,3 +87,69 @@ h3 {
 #game-thumb-3 {
   width: 100%;
 }
+
+/*------------------- Media Quaries --------------*/
+/*Mobile for the outsid eof the grid*/
+@media only screen and (max-width: 767px)
+ {
+    .ui.grid {
+    width: auto !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+ }
+/*----------Mobile for grid surrounding the content------------*/
+ @media only screen and (max-width: 767px)
+ {
+.ui[class*="internally celled"].grid {
+    width: auto !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+ }
+
+/*----------------- Mobile for content in the three cards---------*/
+ @media only screen and (max-width: 767px)
+ {
+.content {
+    width: auto !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+ }
+/*---------------Mobile for the title------------------*/
+ @media only screen and (max-width: 767px)
+ {
+    .ui.segment:first-child{
+    width: 100% !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+ }
+ /*-----------------------Mobile for the search Button--------------- */
+ @media only screen and (max-width: 767px)
+ {
+    input{
+    width: 100% !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+ }
+ /*----------------Mobile for the three cards------------------*/
+ @media only screen and (max-width: 767px)
+ {
+    .ui.three.cards>.card{
+    width: 100% !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+ }
+
+
+ 
+ 
+
+ 
+
+ 
+ 
