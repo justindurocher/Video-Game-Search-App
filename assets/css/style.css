@@ -2,35 +2,23 @@ body {
     background-image: url("https://wallpaperaccess.com/full/772418.jpg");
     
 }
-<<<<<<< HEAD
-
-.header:hover{
-    background-color: black;
-    color: red;
-}
-
-=======
- 
 
 div.ui.segment {
     background-color: gainsboro;
 }
->>>>>>> 4a68b2eee2053bbc584e510e38e30d0ecf0a6b59
 h1{
     font-family: 'Fruktur', cursive;
-    font-size: 50px;
-    letter-spacing: 2px;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: red;
+    font-size: 40px;
 }
 
-<<<<<<< HEAD
-=======
 div.ui.segment {
     background-image: url("https://t4.ftcdn.net/jpg/02/08/90/41/240_F_208904171_ZCPXQXNfHV3L7QzYGp7rkeFfma7gBfGb.jpg");
     background-size: auto;
 }
-
+.searchData{
+    text-align: center;
+    margin-right: 19%;
+}
 input {
     width: 60%;
     padding: 7px;
@@ -57,17 +45,12 @@ h5.card-title {
     color: whitesmoke;
 } 
 
->>>>>>> 4a68b2eee2053bbc584e510e38e30d0ecf0a6b59
 .sixteen{
     text-align: center;
 }
-
 #gameButton{
     background-color: white;
-    color: black;
-    font-size: 30px;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: red;
+    color:black;
     margin-bottom: 10px;
     width: 300px;
     padding: 15px;
@@ -78,14 +61,12 @@ h5.card-title {
     font-family: 'Fruktur', cursive;
     letter-spacing: 2px;
 }
-
 #gameButton:hover{
     background-color: black;
-    color: red;
+    color: greenyellow;
     border-color: white;
 }
-
-.header {
+h1 {
     text-align: center;
     color: black;
 }
@@ -99,7 +80,6 @@ h3 {
     text-align: center;
     color: whitesmoke;
 }
-
 .ui.cards {
     margin: 106px;
 }
