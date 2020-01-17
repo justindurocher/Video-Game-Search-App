@@ -94,7 +94,6 @@ if (randomGameCount < 3) {
 }
 });
 }
-<<<<<<< HEAD
 //////////
 //AbNews API: 7489c782bcde4db08a083da4b92cd2ef
 ////////////
@@ -183,66 +182,6 @@ searchIcon.on("click", function(event)
 
 ///////variable to the total number of articles/////
 
-=======
-
-//////////
-//Ab
-////////////
-
-
-// var searchFromIndexPage = $(".search.link.icon").val();
-// var searchIconFromIndexPage = $("#searchIcon");
-var searchFromDisplayPage = $(".search.link.icon").val();
-var seacrIconFromDisplayPage = $(".search.link");
-
-// searchIconFromIndexPage.on("click", function(event)
-// {
-//     event.preventDefault();
-//     console.log("calling from Index")
-//     getInput(searchFromIndexPage);
-// });
-seacrIconFromDisplayPage.on("click", function(event)
-{
-    event.preventDefault();
-    console.log("calling from Display");
-    console.log(seacrIconFromDisplayPage);
-    getInput (searchFromDisplayPage);
-});
-
-function getInput(userInput){
-  
-  console.log("user search " + userInput);
-  //$(".searchData").text(yourSearch);
-  uSearch(userInput);
-}
-// var yourSeach = $(".ui.transparent.icon.input").text();
-// console.log("user search " + yourSeach);
-// $(".ui.transparent.icon.input")
-//   .search({
-//     type: "Title",
-//     source: response
-//   });
-
-  var queryURL = "https://api.rawg.io/api/games?page_size=5&search=";
-
-  function uSearch(title) {
-    $.ajax({
-      url: queryURL + title,
-      method: 'GET'
-    }).then(function(response) {
-      console.log(response);
-      var result = response.description;
-      console.log($(result));
-      
-    });
-  
-}
-
-
-
-///////variable to the total number of articles/////
-
->>>>>>> 8c010dc5bebe17b066d84030fec85d70cfb58384
 // let totalArticles;
 
 // ///////variable increment if th erandom article was successful/////
@@ -275,7 +214,3 @@ function getInput(userInput){
 //   }
 //   articleDisplayIndex++;
 // }})
-<<<<<<< HEAD
-=======
-
->>>>>>> 8c010dc5bebe17b066d84030fec85d70cfb58384
