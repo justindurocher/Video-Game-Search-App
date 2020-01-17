@@ -2,7 +2,6 @@
 let totalGames;
 // variable to increment if the random game query was successful
 let randomGameCount = 0;
-let gameImageDisplayIndex = 1;
 
 // query RAWG to get total number of games
 $.ajax({
@@ -11,206 +10,170 @@ $.ajax({
 }).then(function(response) {
   totalGames = response.count;
   console.log(totalGames);
-  threeRandomGames();
-})
+  prepDisplay();
+  $('#game-search-results').removeClass('vis-hidden');
+  getRandomGames();
+});
 
-// get 3 random games
-function threeRandomGames() {
+function prepDisplay() {
+  $('#game-search-results').addClass('vis-hidden');
+  $('#game-cards').empty();
+  
+  $('#main-game-display').addClass('vis-hidden');
+  $('#main-game-display').empty();
+  
+  $('#game-news-container').addClass('vis-hidden');
+  $('#game-news').empty();
+}
+
+// get 5 random games
+function getRandomGames() {
   let randNum = Math.floor(Math.random() * totalGames);
-  // console.log(randNum);
 
   $.ajax({
     url: 'https://api.rawg.io/api/games/' + randNum,
     method: 'GET'
   }).then(function(response) {
-    // console.log('then');
-    // console.log(response);
-    console.log(response.background_image === null);
-    if (response) {
-      randomGameCount++;
-      let elID = '#game-thumb-' + gameImageDisplayIndex;
-      if (response.background_image === null) {
-        // Display a placeholder image
-      } else {
-        $(elID).attr('src', response.background_image);
-      }
-      
-      gameImageDisplayIndex++;
+    console.log(response)
+    populateGameSearchCards(response);
+    randomGameCount++;
+    
+    // call function until 5 successful responses
+    if (randomGameCount < 5) {
+      getRandomGames();
     }
-    if (randomGameCount < 3) {
-      threeRandomGames();
-    }
-      
+  }).fail(function() {
+    getRandomGames();
+  });
+}
 
-///////////////////////// Articles function/////////////
-let totalArticles;
-let articleDisplayIndex = 1;
-$.ajax({
-  articleUrl:'https://newsapi.org/v2/everything' + 'from=2020-01-13&' +'sortBy=popularity&' +'apiKey=5b70edca1d034d86b9a94213f1344c61',
-  method:"GET"
-}).then(function(response) {
-  totalArticles = response.count;
-  console.log(totalArticles);
-  console.log(articleUrl)
-  console.log(response.image === randomGameCount);
-});
+function populateGameSearchCards(response) {
+  let newCard = $('<div class="card">');
+  $(newCard).attr('id', response.id);
 
-$.ajax({
-  articleUrl:'https://newsapi.org/v2/everything?'  + 'from=2020-01-13&' +'sortBy=popularity&' +'apiKey=5b70edca1d034d86b9a94213f1344c61',
-  method:"GET"
-}).then(function(response) {
-var img = $('#image-header').attr({
-  'src': "https//newsapi.org/v2/sources?" + response.article.urlToImage + 'png',
-  'alt': response.article.urlToImage
-})
-if( response) { 
-  articleCount ++;
-  let ID = '#image-header-' + articleDisplayIndex;
-  if (image === randomGameCount) {
-    ///Display placeholder image////
-  } else{
-    $(ID).attr('src', response.data.artciles.urlToImage);
+  let cardImg = $('<div class="image">');
+  if (response.background_image === null) {
+    // Display a placeholder image
+  } else {
+    $(cardImg).append('<img src="' + response.background_image + '">');
   }
-  articleDisplayIndex++;
-}})
-  ///////////////// Grab the images for the articles////////////
+  newCard.append(cardImg);
 
+  let cardContent = $('<div class="content">');
+  let cardHeader = $('<div class="header">').text(response.name);
+  cardContent.append(cardHeader);
 
+  let description = $('<div class="description">');
 
+  let releaseDate = $('<p>').text('Release Date: ' + response.released);
+  description.append(releaseDate);
 
+  let rawgID = $('<p>').text('RAWG ID: ' + response.id);
+  description.append(rawgID);
 
+  cardContent.append(description);
+  newCard.append(cardContent);
 
-
-
-
-
-
-
-}).fail(function(response) {
-// console.log('fail');
-// console.log(response);
-if (randomGameCount < 3) {
-  threeRandomGames();
+  $('#game-cards').append(newCard);
 }
-});
-}
-//////////
-//AbNews API: 7489c782bcde4db08a083da4b92cd2ef
-////////////
 
+// articleUrl:'https://newsapi.org/v2/everything?from=2020-01-13&sortBy=popularity&apiKey=5b70edca1d034d86b9a94213f1344c61',
 
-var searchIcon = $(".searchIcon");
-$(".searchIcon").load("/searchItems.html .searchData")
+var searchIcon = $("#search-button");
 searchIcon.on("click", function(event)
 {
     event.preventDefault();
+    prepDisplay();
+    $('#game-search-results').removeClass('vis-hidden');
     var userInput = $(".searchInput").val();
     uSearch(userInput);
-    $(".searchIcon").load("/searchItems.html .searchData");
 });
 
-  var queryURL = "https://api.rawg.io/api/games?page_size=5&search=";
-
-  function uSearch(title) {
-    $.ajax({
-      url: queryURL + title,
-      method: 'GET'
-    }).then(function(response) { 
-      if (response.count > 1)
-      {
-        var cardDeck = $("<div>");
-        for (var i = 0; i < response.results.length; i++)
-        {
-          console.log(response.results[i]);
-          console.log(response.results[i].id);
-          console.log(response.results[i].background_image);
-          var myImage = $("<img>");
-          var gameTitle = $("<h2>");
-          // gameTitle.text((response.results[i].name));
-          //$(".searchData").append(gameTitle);
-          myImage.attr("src", response.results[i].background_image);
-          //$(".searchData").append(myImage);
-///Cards statr here.
-          
-          var aCard = $("<div>");
-          var cardImage = $("<img>");
-          var cardBody = $("<div>");
-          var cardTitle = $("<h5>");
-          var cardText = $("<p>");
-          var cardFooter = $("<div>");
-          var cardFooterText = $("<a>");
-          cardDeck.addClass("card-deck");
-          aCard.addClass("card");
-          cardImage.attr("src", response.results[i].background_image);
-          cardImage.addClass("card-img-top");
-          cardBody.addClass("card-body");
-          cardTitle.addClass("card-title");
-          cardText.addClass("card-text");
-          cardFooter.addClass("card-footer");
-          cardFooterText.addClass("card-link" );
-          cardFooterText.attr("href", "#");
-          cardFooterText.text("News Articles on this game");
-          cardTitle.text(response.results[i].name);
-          cardText.text(response.results[i].released)
-          cardBody.append(cardTitle, cardText);
-          cardFooter.append(cardFooterText);
-          aCard.append(cardImage, cardBody, cardFooter);
-          cardDeck.append(aCard);
-          $(".searchData").append(cardDeck);
-          //$(".searchData").append($("<br>"));
-          //https://newsapi.org/v2/everything?q=mario&apiKey=7489c782bcde4db08a083da4b92cd2ef
-          ////News API start here
-          var searchArticle = "https://newsapi.org/v2/everything?q=" + response.results[i].name + "&apiKey=7489c782bcde4db08a083da4b92cd2ef";
-
-            $.ajax({
-              url: searchArticle,
-              method: 'GET'
-            }).then(function(response){
-              console.log(response);
-            });
-          
-        }
-      }
-
-      else
-      console.log(response.id);
-
-    });
-  
+function uSearch(title) {
+  $.ajax({
+    url: "https://api.rawg.io/api/games?page_size=5&search=" + title,
+    method: 'GET'
+  }).then(function(response) {
+    // console.log(response);
+    for (var i = 0; i < response.results.length; i++)
+    {
+      populateGameSearchCards(response.results[i]);
+    }
+  });
 }
 
+$('#game-search-results').on('click', '.card', function() {
+  // console.log($(this).find('.header').text());
+  // console.log($(this).attr('id'));
+  prepDisplay();
+  $('#main-game-display').removeClass('vis-hidden');
+  $('#game-news-container').removeClass('vis-hidden');
+  querySpecificGame($(this).attr('id'));
+  queryGameNews($(this).find('.header').text());
+});
 
-///////variable to the total number of articles/////
+function querySpecificGame(rawgGameID){
+  $.ajax({
+    url: 'https://api.rawg.io/api/games/' + rawgGameID,
+    method: 'GET'
+  }).then(function(response) {
+    console.log(response);
+    let newCard = $('<div class="ui card fluid">');
+    let cardImg = $('<div class="image">');
+    if (response.background_image === null) {
+      // Display a placeholder image
+    } else {
+      $(cardImg).append('<img src="' + response.background_image + '">');
+    }
+    newCard.append(cardImg);
+    
+    let cardContent = $('<div class="content">');
+    let cardHeader = $('<div class="header">').text(response.name);
+    cardContent.append(cardHeader);
 
-// let totalArticles;
+    let cardDescription = $('<div class="description">');
+    let releaseDate = $('<p>').text('Release Date: ' + response.released);
+    let gameDescription = $('<p>').text(response.description_raw);
 
-// ///////variable increment if th erandom article was successful/////
-// let articleDisplayIndex = 1;
+    cardDescription.append(releaseDate, gameDescription);
+    cardContent.append(cardDescription);
+    newCard.append(cardContent);
+    $('#main-game-display').append(newCard);
+  });
+}
 
+function queryGameNews(gameName) {
+  $.ajax({
+    url: 'https://newsapi.org/v2/everything?q=' + gameName + '&apiKey=7489c782bcde4db08a083da4b92cd2ef',
+    method: 'GET'
+  }).then(function(response) {
+    console.log(response);
+    console.log(response.articles.length);
+    if (response.articles.length > 0) {
+      for (let i = 0; i < response.articles.length; i++) {
+        console.log(i);
+        let newItem = $('<div class="item">');
+        let itemImage = $('<div class="image">');
+        $(itemImage).append('<img src="' + response.articles[i].urlToImage + '">');
+        newItem.append(itemImage);
 
-// ////query to get the total number of articles/////
-// $.ajax({
-//   url:"https://newsapi.org/v2/everything?apiKey=5b70edca1d034d86b9a94213f1344c61" + image,
-//   method:"GET"
-// }).then(function(response) {
-//   totalArticles = response.count;
-//   console.log(totalArticles);
-//   console.log(response.image === null);
-//   var image = data.articles.urlToImage;
-// });
+        let itemContent = $('<div class="content">');
+        let itemHeader = $('<div class="header">').text(response.articles[i].title);
+        itemContent.append(itemHeader);
 
-// $.ajax({
-//   url:"https://newsapi.org/v2/everything?apiKey=5b70edca1d034d86b9a94213f1344c61" + image ,
-//   method:"GET"
-// }).then(function(response) {
-// var image = data.articles.urlToImage;
-// if( response) {
-//   articleCount ++;
-//   let ID = "image header" + articleDisplayIndex;
-//   if (image === null) {
-//     ///Display placeholder image////
-//   } else{
-//     $(ID).attr('src', response.image);
-//   }
-//   articleDisplayIndex++;
-// }})
+        let description = $('<div class="description">');
+        $(description).append($('<p>').text('Published by ' + response.articles[i].source.name + ' at ' + response.articles[i].publishedAt));
+        $(description).append($('<p>').text(response.articles[i].description))
+        itemContent.append(description);
+
+        let extra = $('<div class="extra">');
+        $(extra).append($('<a class="ui right floated primary button" target="_blank" href="' + response.articles[i].url + '">').text('View Article'));
+        itemContent.append(extra);
+        newItem.append(itemContent);
+        $('#game-news').append(newItem);
+      }
+    } else {
+      // no articles found on this game
+    }
+  });
+};
