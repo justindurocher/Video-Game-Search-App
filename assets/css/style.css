@@ -2,7 +2,6 @@ body {
     background-image: url("https://wallpaperaccess.com/full/772418.jpg");
     
 }
- 
 
 div.ui.segment {
     background-color: gainsboro;
@@ -16,7 +15,10 @@ div.ui.segment {
     background-image: url("https://t4.ftcdn.net/jpg/02/08/90/41/240_F_208904171_ZCPXQXNfHV3L7QzYGp7rkeFfma7gBfGb.jpg");
     background-size: auto;
 }
-
+.searchData{
+    text-align: center;
+    margin-right: 19%;
+}
 input {
     width: 60%;
     padding: 7px;
@@ -47,8 +49,8 @@ h5.card-title {
     text-align: center;
 }
 #gameButton{
-    background-color: red;
-    color: white;
+    background-color: white;
+    color:black;
     margin-bottom: 10px;
     width: 300px;
     padding: 15px;
@@ -61,7 +63,7 @@ h5.card-title {
 }
 #gameButton:hover{
     background-color: black;
-    color: red;
+    color: greenyellow;
     border-color: white;
 }
 h1 {
