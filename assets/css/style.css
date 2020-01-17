@@ -1,13 +1,21 @@
 body {
-    background-image: url("https://wallpaperaccess.com/full/328890.jpg");
+    background-image: url("https://wallpaperaccess.com/full/772418.jpg");
     
 }
+<<<<<<< HEAD
 
 .header:hover{
     background-color: black;
     color: red;
 }
 
+=======
+ 
+
+div.ui.segment {
+    background-color: gainsboro;
+}
+>>>>>>> 4a68b2eee2053bbc584e510e38e30d0ecf0a6b59
 h1{
     font-family: 'Fruktur', cursive;
     font-size: 50px;
@@ -16,6 +24,40 @@ h1{
     -webkit-text-stroke-color: red;
 }
 
+<<<<<<< HEAD
+=======
+div.ui.segment {
+    background-image: url("https://t4.ftcdn.net/jpg/02/08/90/41/240_F_208904171_ZCPXQXNfHV3L7QzYGp7rkeFfma7gBfGb.jpg");
+    background-size: auto;
+}
+
+input {
+    width: 60%;
+    padding: 7px;
+    margin-left: 19%;
+}
+ 
+div.ui.segment.searchData{
+    width: 1156px;
+    color: ghostwhite;
+    margin-left: 135px;
+}
+i.search.link.icon {
+    color: white;
+}
+input#text {
+    color: black;
+}
+
+p.card-text {
+    color: white;
+}
+
+h5.card-title {
+    color: whitesmoke;
+} 
+
+>>>>>>> 4a68b2eee2053bbc584e510e38e30d0ecf0a6b59
 .sixteen{
     text-align: center;
 }
@@ -66,4 +108,15 @@ h3 {
 #game-thumb-2,
 #game-thumb-3 {
   width: 100%;
+}
+
+/*****************
+AB
+******************/
+
+.searchInput{
+    font-size: unset;
+}
+.searchIcon{
+    size: unset;
 }
