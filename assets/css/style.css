@@ -5,7 +5,7 @@ body {
 
 div.ui.segment {
     background-image: url("https://t4.ftcdn.net/jpg/02/08/90/41/240_F_208904171_ZCPXQXNfHV3L7QzYGp7rkeFfma7gBfGb.jpg");
-    /* background-size: auto; */
+    background-size: auto;
 }
 
 .vis-hidden {
@@ -25,10 +25,4 @@ h3 {
 
 .ui.items>.item {
     background-color: rgba(255, 255, 255, .9);
-}
-
-#game-thumb-1,
-#game-thumb-2,
-#game-thumb-3 {
-  width: 100%;
 }
