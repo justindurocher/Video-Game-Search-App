@@ -1,13 +1,15 @@
-# Video-Game-Search-App
-Video Game and Comic Search App
+# Video Game Search with Related News
 
-In our application, the user will be able to search from a database of all the videogames and comics ever created.
+As a gamers, we wanted to be able to search for videogames and get related news so that we can stay updated on recent changes and patches to our favorite games.
 
-As a gamer/comic fanatic, I want to be able to search from all the videogames/comics created, so that I will be able to read about the games or comics before I buy the product.
+## Description
 
-[www.igdb.com](https://api-docs.igdb.com/) and [www.newsapi.com](https://newsapi.org/)
+This app can be used to search the [RAWG](https://rawg.io/) API for video games, and searches the [News API](https://newsapi.org/) for related information via the title of the game.
 
-Two developers for html/css (front-end) and Two developers for javascript (back-end)
+## Installation
 
-Front end= Josh and Justin 
-Back end= Nate and Aboudou
+This repo consists of front end web files. To run this app locally after cloning the repo, open index.html in your browser of choice. Please keep in mind that while the [RAWG API](https://rawg.io/apidocs) doesn't require an API key, the News API does. The key used here is a free key that is intended for demonstration purposes. If this key stops working, make a an account at [newsapi.org](https://newsapi.org/) to get a free key and update the related fields in the assets/js/script.js file.
+
+## Credits
+
+Made with love by [Justin Durocher](https://github.com/justindurocher), [Joshua Alabre](https://github.com/Jalabre1995), [Aboudou Ouro-Salim](https://github.com/ourosalim-cmd), and [Nathan Sartain](https://github.com/NatePad).
