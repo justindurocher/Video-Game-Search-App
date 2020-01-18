@@ -1,102 +1,31 @@
 body {
     background-image: url("https://wallpaperaccess.com/full/772418.jpg");
-    
-}
-
-div.ui.segment {
-    background-color: gainsboro;
-}
-h1{
-    font-family: 'Fruktur', cursive;
-    font-size: 40px;
+    min-height: 100vh;
 }
 
 div.ui.segment {
     background-image: url("https://t4.ftcdn.net/jpg/02/08/90/41/240_F_208904171_ZCPXQXNfHV3L7QzYGp7rkeFfma7gBfGb.jpg");
     background-size: auto;
 }
-.searchData{
-    text-align: center;
-    margin-right: 19%;
-}
-input {
-    width: 60%;
-    padding: 7px;
-    margin-left: 19%;
-}
- 
-div.ui.segment.searchData{
-    width: 1156px;
-    color: ghostwhite;
-    margin-left: 135px;
-}
-i.search.link.icon {
-    color: white;
-}
-input#text {
-    color: black;
+
+.d-none {
+    display: none;
 }
 
-p.card-text {
-    color: white;
-}
-
-h5.card-title {
-    color: whitesmoke;
-} 
-
-.sixteen{
-    text-align: center;
-}
-#gameButton{
-    background-color: white;
-    color:black;
-    margin-bottom: 10px;
-    width: 300px;
-    padding: 15px;
-    border: 2px solid black;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: xx-large;
-    font-family: 'Fruktur', cursive;
-    letter-spacing: 2px;
-}
-#gameButton:hover{
-    background-color: black;
-    color: greenyellow;
-    border-color: white;
-}
 h1 {
-    text-align: center;
-    color: black;
+    font-family: 'Fruktur', cursive;
+    font-size: 40px;
 }
 
-h2 {
-    text-align: center;
-    color: whitesmoke;
-}
-
+h1,
+h2,
 h3 {
     text-align: center;
-    color: whitesmoke;
-}
-.ui.cards {
-    margin: 106px;
 }
 
-#game-thumb-1,
-#game-thumb-2,
-#game-thumb-3 {
-  width: 100%;
-}
 
-/*****************
-AB
-******************/
-
-.searchInput{
-    font-size: unset;
-}
-.searchIcon{
-    size: unset;
+.ui.items>.item,
+#total-games,
+#news-header {
+    background-color: rgba(255, 255, 255, .9);
 }
