@@ -4,7 +4,7 @@ As a gamers, we wanted to be able to search for videogames and get related news 
 
 ## Description
 
-This app can be used to search the [RAWG](https://rawg.io/) API for video games, and searches the [News API](https://newsapi.org/) for related information via the title of the game.
+This app can be used to search the [RAWG](https://rawg.io/) API for video games, and searches the [News API](https://newsapi.org/) for related information via the title of the game. The live version of this app is hosted by GitHub Pages at [justindurocher.github.io/Video-Game-Search-App](https://justindurocher.github.io/Video-Game-Search-App/).
 
 ## Installation
 
