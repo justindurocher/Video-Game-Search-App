@@ -10,7 +10,7 @@ This app can be used to search the [RAWG](https://rawg.io/) API for video games,
 
 This repo consists of front end web files. To run this app locally after cloning the repo, open index.html in your browser of choice. Please keep in mind that while the [RAWG API](https://rawg.io/apidocs) doesn't require an API key, the News API does. The key used here is a free key that is intended for demonstration purposes. If this key stops working, make a an account at [newsapi.org](https://newsapi.org/) to get a free key and update the related fields in the assets/js/script.js file.
 
-<img src="./assets/img/Capture3.pn" alt="screenshot">
+<img src="./assets/img/Capture3.png" alt="screenshot">
 
 ## Credits
 
