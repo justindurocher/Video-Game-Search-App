@@ -1,6 +1,6 @@
 # Video Game Search with Related News
 
-As a gamers, we wanted to be able to search for videogames and get related news so that we can stay updated on recent changes and patches to our favorite games.
+As gamers, we wanted to be able to search for video games and fetch related news so that we can stay updated on the most recent changes and patches to our favorite games.
 
 ## Description
 
@@ -9,6 +9,8 @@ This app can be used to search the [RAWG](https://rawg.io/) API for video games,
 ## Installation
 
 This repo consists of front end web files. To run this app locally after cloning the repo, open index.html in your browser of choice. Please keep in mind that while the [RAWG API](https://rawg.io/apidocs) doesn't require an API key, the News API does. The key used here is a free key that is intended for demonstration purposes. If this key stops working, make a an account at [newsapi.org](https://newsapi.org/) to get a free key and update the related fields in the assets/js/script.js file.
+
+<img src="" alt="screenshot">
 
 ## Credits
 
